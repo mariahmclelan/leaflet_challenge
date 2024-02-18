@@ -28,10 +28,6 @@ function markerSize(magnitude) {
 }
 
 // Define function to choose color based on earthquake depth
-
-
-
-
 function markerColor(depth) {
     if (depth > 90) {
         return '#ffad01';
@@ -64,7 +60,7 @@ d3.json(url).then(function(data) {
     }).addTo(myMap);
 });
 
-//set ledgend
+//set legend
 let legend = L.control({ position: "bottomright" });
 legend.onAdd = function() {
     let div = L.DomUtil.create("div", "info legend"), 
