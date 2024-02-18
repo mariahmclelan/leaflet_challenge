@@ -57,7 +57,8 @@ d3.json(url).then(function(data) {
         onEachFeature: function(feature, layer) {
             layer.bindPopup("<h4>Location: " + feature.properties.place + 
             "</h4><hr><p>Date & Time: " + new Date(feature.properties.time) + 
-            "</p><hr><p>Magnitude: " + feature.properties.mag + "</p>");
+            "</p><hr><p>Magnitude: " + feature.properties.mag + "</p>" +
+            "</p><hr><p>Depth: " + feature.geometry.coordinates[2] + "</p>");
         }
     }).addTo(myMap);
 });
