@@ -9,7 +9,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(myMap);
 
-// Define function to create marker style based on earthquake magnitude
+// Define function to create marker style based on earthquake magnitude and depth
 function styleInfo(feature) {
     return {
         opacity: 1,
@@ -30,15 +30,17 @@ function markerSize(magnitude) {
 // Define function to choose color based on earthquake depth
 function markerColor(depth) {
     if (depth > 90) {
-        return '#ffad01';
+        return ' #281c65';
     } else if (depth >70) {
-        return '#ff7f00';
+        return '#622097';
     } else if (depth >50) {
-        return '#ff3401';
+        return '#a0178a';
     } else if (depth >30) {
-        return '#f6004d';
+        return '#eb2c5d';
+    } else if (depth >10) {
+        return '#fc6840';
     } else {
-        return "#c50171";
+        return '#f8c93c';
     }
 }
 
